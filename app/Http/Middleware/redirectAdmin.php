@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
+
 
 class redirectAdmin
 {
@@ -16,7 +18,7 @@ class redirectAdmin
     public function handle(Request $request, Closure $next, $guard = null): Response
     {
         if(Auth::guard($guard)->check() && Auth::user()->isAdmin ==1 ){
-            return redirect()->route('admin.dasshboard');
+            return redirect()->route('admin.dashboard');
         }
         return $next($request);
     }
