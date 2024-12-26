@@ -1,5 +1,5 @@
 <script setup>
-import AdminLayout from './Components/AdminLayout.vue';
+import AdminLayout from '../Components/AdminLayout.vue';
 import ProductList from './ProductList.vue';
 </script>
 <template>
